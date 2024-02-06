@@ -13,8 +13,9 @@ class Testimonial extends Model
         'custdesignation',
         'custreview',
         'custimg',
-        'custcompany',
-        'date',
+       // 'custcompany',
+       // 'date',
+       'custstar',
         'created_at',
     ];
     public function images()

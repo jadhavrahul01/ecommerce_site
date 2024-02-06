@@ -27,9 +27,9 @@ class TestimonialController extends Controller
             "name" => "required|string",
             "custdesignation" => "required|string",
             "review" => "required|string",
-            "custcompany" => "required|string",
+            "custstar" => "required|string",
             "cover" => "required|image|mimes:jpeg,png,jpg",
-            "date" => "required|date",
+//"date" => "required|date",
         ]);
 
         if ($request->hasFile("cover")) {
@@ -42,8 +42,8 @@ class TestimonialController extends Controller
                 "custdesignation" => $request->custdesignation,
                 "custreview" => $request->review,
                 "custimg" => $imageName,
-                "custcompany" => $request->custcompany,
-                "date" => $request->date,
+                "custstar" => $request->custstar,
+               // "date" => $request->date,
             ]);
             $testimonials->save();
         }
@@ -66,9 +66,9 @@ class TestimonialController extends Controller
             "name" => "required|string",
             "custdesignation" => "required|string",
             "review" => "required|string",
-            "custcompany" => "required|string",
+            "custstar" => "required|string",
             "custimg" => "nullable|image|mimes:jpeg,png,jpg",
-            "date" => "required|date",
+         //   "date" => "required|date",
         ]);
 
         $post = Testimonial::findOrFail($id);
@@ -86,8 +86,8 @@ class TestimonialController extends Controller
             "custdesignation" => $request->custdesignation,
             "custreview" => $request->review,
              "custimg" =>  $post->custimg,
-            "custcompany" => $request->custcompany,
-            "date" => $request->date,
+            "custstar" => $request->custstar,
+          //  "date" => $request->date,
         ]);
         return redirect()->route('admin.testimonial.index')->with('success', 'Updated Successfully');
     }

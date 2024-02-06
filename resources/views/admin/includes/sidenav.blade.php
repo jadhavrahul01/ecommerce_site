@@ -65,6 +65,28 @@
                         </div>
                     </a>
                 </li>
+                <li class="nav-item dropdown"><a class="nav-link " href="#" role="button"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="apps">Products</a>
+                <li class="nav-item  ">
+                    <a class="nav-link" href=" {{ route('admin.product.index') }}" role="button" >
+                        <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-list-alt"></span></span><span class="nav-link-text ps-1"> All Product</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link" href=" {{ route('admin.product.create') }}" role="button" >
+                        <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-comments"></span></span><span class="nav-link-text ps-1"> Add Product</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link" href=" {{ route('admin.product.addcategory') }}" role="button" >
+                        <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-plus-square"></span></span><span class="nav-link-text ps-1">Add Category</span>
+                        </div>
+                    </a>
+                </li>
+
+            
                 <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
                     <div class="col-auto navbar-vertical-label">Forms</div>
                     <div class="col ps-0">
@@ -73,7 +95,7 @@
                 </div>
 
                 <li class="nav-item  ">
-                    <a class="nav-link" href=" " role="button">
+                    <a class="nav-link" href="{{ route('admin.message.index') }}" role="button">
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><span
                                     class="fas fa-user"></span></span><span class="nav-link-text ps-1">Contact
                                 Form</span>
@@ -88,7 +110,7 @@
                     </div>
                 </div>
                 <li class="nav-item  ">
-                    <a class="nav-link" href=" " role="button">
+                    <a class="nav-link" href="{{ route('admin.website-settings.index') }} " role="button">
                         <div class="d-flex align-items-center"><span class="nav-link-icon"><span
                                     class="fas fa-wrench"></span></span><span class="nav-link-text ps-1">Website
                                 settings</span>

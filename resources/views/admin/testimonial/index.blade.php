@@ -45,8 +45,9 @@
                                             <th>Client Logo</th>
                                             <th>Customer Name</th>
                                             <th>Customer Designation</th>
-                                            <th>Customer Company</th>
-                                            <th>Date</th>
+                                            <th>Customer Review</th>
+
+
                                             <th style="text-align: center;">Edit</th>
                                             <th style="text-align: center;">Delete</th>
                                         </tr>
@@ -61,8 +62,65 @@
                                                 </td>
                                                 <td>{{ $tsti->custname }}</td>
                                                 <td>{{ $tsti->custdesignation }}</td>
-                                                <td>{{ $tsti->custcompany }}</td>
-                                                <td>{{ $tsti->date }}</td>
+
+                                                <td>
+
+                                                    <div >
+
+                                                        @if ($tsti->custstar == 1)
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                        @elseif ($tsti->custstar == 2)
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                        @elseif ($tsti->custstar == 3)
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                        @elseif ($tsti->custstar == 4)
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#" style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                        @elseif ($tsti->custstar == 5)
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                            <a href="#"style="color: orange">
+                                                                <i class="fa-solid fa-star"></i>
+                                                            </a>
+                                                        @endif
+                                                  </div>
+                                                </td>
+
                                                 <td style="text-align: center;"><a
                                                         href=" {{ route('admin.testimonial.edit', $tsti->id) }}"
                                                         class="btn btn-primary border">Edit</a>

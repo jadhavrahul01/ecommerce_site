@@ -18,6 +18,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/img/logo.png')}}" width="132"
         height="72" alt="logo">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <meta name="theme-color" content="#ffffff">
     <script src="{{ asset('admin-assets/js/config.js') }}"></script>
     <script src="{{ asset('admin-assets/vendors/simplebar/simplebar.min.js') }}"></script>
@@ -45,6 +49,7 @@
     <link href="{{ asset('admin-assets/css/theme.min.css') }}" rel="stylesheet" id="style-default">
     <link href="{{ asset('admin-assets/css/user-rtl.min.css') }}" rel="stylesheet" id="user-style-rtl">
     <link href="{{ asset('admin-assets/css/user.min.css') }}" rel="stylesheet" id="user-style-default">
+    <link href="{{ asset('admin-assets/css/style.css') }}" rel="stylesheet" id="user-style-default">
     <script>
         var isRTL = JSON.parse(localStorage.getItem('isRTL'));
         if (isRTL) {

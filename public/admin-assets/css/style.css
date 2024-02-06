@@ -372,3 +372,260 @@ input:checked + .slider:before {
         height: 400px;
     }
 }
+
+.testimonial__item-6 {
+    padding: 35px 30px 40px 30px;
+    background: var(--tp-common-white);
+    box-shadow: 0px 1px 2px rgba(13, 18, 30, 0.08);
+    position: relative;
+}
+
+.testimonial__item-6::after {
+    position: absolute;
+    content: "";
+    left: auto;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--tp-theme-6);
+}
+
+[dir="rtl"] .testimonial__item-6::after {
+    left: 0;
+    right: auto;
+}
+
+.testimonial__item-6:hover {
+    box-shadow: 0px 30px 30px rgba(13, 18, 30, 0.08);
+}
+
+.testimonial__item-6:hover::after {
+    width: 100%;
+    right: auto;
+    left: 0;
+}
+
+[dir="rtl"] .testimonial__item-6:hover::after {
+    left: auto;
+    right: 0;
+}
+
+.testimonial__item-7 {
+    border-radius: 40px;
+    padding: 50px 35px 45px;
+}
+.ratings-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+    font-size: 1.2rem;
+}
+
+.ratings-full,
+.ratings {
+    position: relative;
+    font-family: "wolmart";
+    letter-spacing: 0.2em;
+}
+
+.ratings-full {
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+.ratings-full::before {
+    content: "" "" "" "" "";
+    color: rgba(0, 0, 0, 0.16);
+    white-space: nowrap;
+}
+.ratings-full:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.ratings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.ratings::before {
+    content: "" "" "" "" "";
+    color: #f93;
+}
+
+.rating-reviews {
+    margin: 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: #aaa;
+}
+.rating-reviews:hover {
+    color: #336699;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+    }
+    .rate:not(:checked) > input {
+    position:absolute;
+    display: none;
+    }
+    .rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+    }
+    .rated:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+    }
+    .rate:not(:checked) > label:before {
+    content: '★ ';
+    }
+    .rate > input:checked ~ label {
+    color: #ffc700;
+    }
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+    }
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+    }
+    .star-rating-complete{
+       color: #c59b08;
+    }
+    .rating-container .form-control:hover, .rating-container .form-control:focus{
+    background: #fff;
+    border: 1px solid #ced4da;
+    }
+    .rating-container textarea:focus, .rating-container input:focus {
+    color: #000;
+    }
+    .rated {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+    }
+    .rated:not(:checked) > input {
+    position:absolute;
+    display: none;
+    }
+    .rated:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ffc700;
+    }
+    .rated:not(:checked) > label:before {
+    content: '★ ';
+    }
+    .rated > input:checked ~ label {
+    color: #ffc700;
+    }
+    .rated:not(:checked) > label:hover,
+    .rated:not(:checked) > label:hover ~ label {
+    color: #deb217;
+    }
+    .rated > input:checked + label:hover,
+    .rated > input:checked + label:hover ~ label,
+    .rated > input:checked ~ label:hover,
+    .rated > input:checked ~ label:hover ~ label,
+    .rated > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+    }
+    .star-widget input {
+        display: none;
+    }
+
+    .star-widget label {
+        font-size: 20px;
+        color: #444;
+        /* padding: 10px; */
+        float: right;
+        transition: all .2s ease;
+    }
+
+    /* input:not(:checked)~label:hover,
+    input:not(:checked)~label:hover~label {
+        color: black;
+    } */
+
+    input:checked~label {
+        color: gold;
+
+    }
+
+    #rate-1:checked~.rating-desc:before {
+        content: "Poor😋";
+    }
+
+    #rate-2:checked~.rating-desc:before {
+        content: "Not bad";
+    }
+
+    #rate-3:checked~.rating-desc:before {
+        content: "Average";
+    }
+
+    #rate-4:checked~.rating-desc:before {
+        content: "Good😋";
+    }
+
+    #rate-5:checked~.rating-desc:before {
+        content: "Excellent😋";
+    }
+
+    */ .rating-desc {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 5px 0 10px 0;
+        text-align: center;
+        transition: all .2s ease;
+    }
+
+    .star-rating-bx {
+        /* background-color: #f38282; */
+        /* box-shadow: 0px 4px 40px 0px rgb(0 0 0 / 5%); */
+        border-radius: 10px;
+        /* padding: 40px; */
+    }
+
+    .p-card{
+        padding-left: 1px!important;
+        flex-direction: row!important;
+        gap: 20px!important;
+        background-color: #212332!important;
+    }
+    .testimonial__rating a {
+        text-decoration: none;
+        color: #f6a400;
+    }

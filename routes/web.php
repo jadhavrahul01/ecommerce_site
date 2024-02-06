@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\admin\TestimonialController;
+use App\Http\Controllers\admin\FormController;
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\WebsiteSettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +25,11 @@ Route::name('frontend.')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/about',[HomeController::class,'about'])->name('about');
     Route::get('/contact',[HomeController::class,'contact'])->name('contact');
+    Route::get('/product',[HomeController::class,'product'])->name('product');
+    Route::get('/search/', [HomeController::class, 'search'])->name('product.search');
+  //  Route::get('/filter/', [HomeController::class, 'filter'])->name('product.filter');
+    Route::post('/contact/store', [Homecontroller::class, 'contact_store'])->name('contact.store');
+
 
 });
 
@@ -46,7 +55,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::post('/testimonials/update/{id}', [TestimonialController::class, 'update'])->name('update');
                 Route::get('/testimonials/destroy/{id}', [TestimonialController::class, 'destroy'])->name('destroy');
             });
-              // projects
+              // products
               Route::name('product.')->group(function () {
                 Route::get('/products', [ProductController::class, 'index'])->name('index');
                 Route::get('/categories/addcategory', [CategoryController::class, 'addcategory'])->name('addcategory');
@@ -60,11 +69,9 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::post('/products/store', [ProductController::class, 'store'])->name('store');
                 Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('edit');
                 Route::post('/products/update/{id}', [ProductController::class, 'update'])->name('update');
-
                 Route::get('/products/destroy/{id}', [ProductController::class, 'destroy'])->name('destroy');
-                Route::get('/products/{product_id}/image/create', [ProductController::class, 'create_image'])->name('image.create');
-                Route::post('/products/{product_id}/image/store', [ProductController::class, 'store_image'])->name('image.store');
-                Route::get('/products/{product_id}/image/destroy/{image_id}', [ProductController::class, 'destroy_image'])->name('image.destroy');
+
+
             });
 
 

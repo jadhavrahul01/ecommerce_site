@@ -158,7 +158,7 @@
                         <li><a href="{{ route('frontend.about') }}">Shop</a>
 
                         </li>
-                        <li><a href="{{ route('frontend.about') }}">Products</a>
+                        <li><a href="{{ route('frontend.product') }}">Products</a>
 
                         </li>
                         <li><a href="{{ route('frontend.about') }}">Services</a>

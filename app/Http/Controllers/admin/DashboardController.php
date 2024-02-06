@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\File;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Message;
+use App\Models\Testimonial;
 use App\Models\User;
 
 
@@ -12,8 +14,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-
-        return view('admin.dashboard');
+        $messages = Message::all();
+        $testimonials = Testimonial::all();
+        return view('admin.dashboard',compact('messages','testimonials'));
     }
 
     public function profile()

@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string("custdesignation");
             $table->string("custreview");
             $table->text("custimg");
-            $table->string("custcompany");
-            $table->string('date', 100);
+         //   $table->string("custcompany");
+         //   $table->string('date', 100);
+           $table->string("custstar");
             $table->timestamps();
         });
     }

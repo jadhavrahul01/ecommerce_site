@@ -57,41 +57,64 @@
                     <p class="lh-1 text-dark">dhananjaypreet@gmail.com</p>
                 </div>
             </div>
-
+          @include('admin.message')
             <div class="col-xl-7 col-lg-8 col-md-12 col-sm-12">
-                <form class="row">
+                <form  action="{{ route('frontend.contact.store') }}"class="form contact-us-form" method="post">
+                    @csrf
 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">
                             <label class="small text-dark ft-medium">Your Name *</label>
-                            <input type="text" class="form-control" value="Your Name">
+                            <input  type="text" name="name"
+                                placeholder="Name" class="form-control" value="{{ old('name') }}"  {{ $errors->any() ? 'autofocus' : '' }}>
+                            @error('name')
+                                <span class="text-danger text-sm">
+                                    {{ $message }}
+                                </span>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">
                             <label class="small text-dark ft-medium">Your Email *</label>
-                            <input type="text" class="form-control" value="Your Email">
+                            <input  type="email" name="email"
+                            placeholder="Email" class="form-control" value="{{ old('email') }}">
+                        @error('email')
+                            <span class="text-danger text-sm">
+                                {{ $message }}
+                            </span>
+                        @enderror
                         </div>
                     </div>
-
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">
-                            <label class="small text-dark ft-medium">Subject</label>
-                            <input type="text" class="form-control" value="Type Your Subject">
+                            <label class="small text-dark ft-medium">Your Phone Number *</label>
+                            <input type="text" name="phone"
+                            placeholder="Phone" class="form-control" value="{{ old('phone') }}">
+                        @error('phone')
+                            <span class="text-danger text-sm">
+                                {{ $message }}
+                            </span>
+                        @enderror
                         </div>
                     </div>
 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">
                             <label class="small text-dark ft-medium">Message</label>
-                            <textarea class="form-control ht-80">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias</textarea>
-                        </div>
+                            <textarea rows="5" name="message" placeholder="Messages"
+                                class="form-control">{{ old('message') }}</textarea>
+                            @error('message')
+                                <span class="text-danger text-sm">
+                                    {{ $message }}
+                                </span>
+                            @enderror
                     </div>
 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group">
-                            <button type="button" class="btn btn-dark">Send Message</button>
+                            <button type="submit" class="btn btn-dark">Send Message</button>
                         </div>
                     </div>
 

@@ -58,7 +58,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label class="form-label" for="basic-form-name"> Customer Company Name</label>
                                         <input type="text" id="first-name-column" class="form-control"
                                             value="{{ $testimonials->custcompany }}" placeholder="Customer Company name"
@@ -79,7 +79,7 @@
                                                 {{ $message }}
                                             </span>
                                         @enderror
-                                    </div> 
+                                    </div> --}}
                                 </div>
                                  <div class="mb-3">
                                     <div class="form-group">
@@ -104,6 +104,49 @@
                                     @enderror
 
                                 </div>
+                                <div class="col-md-6 col-12">
+                                    <label>Customer Rating</label>
+                                    <div style="display: flex;flex-direction: row;" class="star-rating-bx p-1"  value="{{ old('custstar') ?? $testimonials->custstar }}">
+                                        <div class="star-widget">
+                                            <input type="radio" name="custstar"
+                                                {{ $testimonials->custstar == 5 ? 'checked' : '' }} name="star"
+                                                id="rate-5" value="5">
+                                            <label for="rate-5" class="fa-solid fa-star"></label>
+                                            <input type="radio" name="custstar"
+                                                {{ $testimonials->custstar == 4 ? 'checked' : '' }} name="star"
+                                                id="rate-4" value="4">
+                                            <label for="rate-4" class="fa-solid fa-star"></label>
+                                            <input type="radio" name="custstar"
+                                                {{ $testimonials->custstar == 3 ? 'checked' : '' }} name="star"
+                                                id="rate-3" value="3">
+                                            <label for="rate-3" class="fa-solid fa-star"></label>
+                                            <input type="radio" name="custstar"
+                                                {{ $testimonials->custstar == 2 ? 'checked' : '' }} name="star"
+                                                id="rate-2" value="2">
+                                            <label for="rate-2" class="fa-solid fa-star"></label>
+                                            <input type="radio" name="custstar"
+                                                {{ $testimonials->custstar == 1 ? 'checked' : '' }} name="star"
+                                                id="rate-1" value="1">
+                                            <label for="rate-1" class="fa-solid fa-star"></label>
+                                            <p id="error-rating"></p>
+                                            <p class="rating-desc"></p>
+                                            <div class="modal fade" id="simpleModal" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h3 class="modal-title" id="exampleModalLabel">
+                                                                Thank you</h3>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"
+                                                                onClick="reload"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                         </div>
                                 <button class="btn btn-primary" type="submit">Submit</button>
                         </div>
                         </form>

@@ -45,7 +45,6 @@
             </a>
         </li>
 
-
         <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
@@ -80,7 +79,7 @@
                 class="toggle-line"></span></span></button>
     <a class="navbar-brand me-1 me-sm-3" href="">
         <div class="d-flex align-items-center">
-            <img class="me-2" src="{{ asset('admin-assets/img/medilink-360-logo.png') }}" alt=""
+            <img class="me-2" src="{{ asset('frontend/img/logo.png')}}" alt=""
                 width="40">
 
         </div>

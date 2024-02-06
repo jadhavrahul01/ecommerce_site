@@ -24,7 +24,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
                     <div class="footer_widget">
                         <h4 class="widget_title">Supports</h4>
@@ -38,7 +37,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
                     <div class="footer_widget">
                         <h4 class="widget_title">Shop</h4>
@@ -51,7 +49,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
                     <div class="footer_widget">
                         <h4 class="widget_title">Company</h4>
@@ -63,7 +60,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                     <div class="footer_widget">
                         <h4 class="widget_title">Subscribe</h4>
@@ -78,7 +74,7 @@
                         </div>
                         <div class="address mt-3">
                             <h5 class="fs-sm text-light">Secure Payments</h5>
-                            <div class="scr_payment"><img src="assets/img/card.png" class="img-fluid" alt="" /></div>
+                            <div class="scr_payment"><img src="{{ asset('frontend/img/card.png')}}" class="img-fluid" alt="" /></div>
                         </div>
                     </div>
                 </div>
@@ -86,7 +82,6 @@
             </div>
         </div>
     </div>
-
     <div class="footer-bottom">
         <div class="container">
             <div class="row align-items-center">
