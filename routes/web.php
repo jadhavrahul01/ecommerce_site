@@ -22,15 +22,13 @@ use App\Http\Controllers\admin\WebsiteSettingController;
 */
 
 Route::name('frontend.')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/about',[HomeController::class,'about'])->name('about');
-    Route::get('/contact',[HomeController::class,'contact'])->name('contact');
-    Route::get('/product',[HomeController::class,'product'])->name('product');
+    Route::get('/', [HomeController::class, 'home'])->name('home');
+    Route::get('/about', [HomeController::class, 'about'])->name('about');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+    Route::get('/product', [HomeController::class, 'product'])->name('product');
     Route::get('/search/', [HomeController::class, 'search'])->name('product.search');
-  //  Route::get('/filter/', [HomeController::class, 'filter'])->name('product.filter');
+    //  Route::get('/filter/', [HomeController::class, 'filter'])->name('product.filter');
     Route::post('/contact/store', [Homecontroller::class, 'contact_store'])->name('contact.store');
-
-
 });
 
 
@@ -55,8 +53,8 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::post('/testimonials/update/{id}', [TestimonialController::class, 'update'])->name('update');
                 Route::get('/testimonials/destroy/{id}', [TestimonialController::class, 'destroy'])->name('destroy');
             });
-              // products
-              Route::name('product.')->group(function () {
+            // products
+            Route::name('product.')->group(function () {
                 Route::get('/products', [ProductController::class, 'index'])->name('index');
                 Route::get('/categories/addcategory', [CategoryController::class, 'addcategory'])->name('addcategory');
                 Route::get('/categories/indexcategory', [CategoryController::class, 'indexcategory'])->name('indexcategory');
@@ -70,8 +68,6 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('/products/edit/{id}', [ProductController::class, 'edit'])->name('edit');
                 Route::post('/products/update/{id}', [ProductController::class, 'update'])->name('update');
                 Route::get('/products/destroy/{id}', [ProductController::class, 'destroy'])->name('destroy');
-
-
             });
 
 
@@ -79,13 +75,12 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/website-settings/edit/{slug}', [WebsiteSettingController::class, 'edit'])->name('website-settings.edit');
             Route::post('/website-settings/update/{slug}', [WebsiteSettingController::class, 'update'])->name('website-settings.update');
 
-             // contact form
-             Route::get('/message', [FormController::class, 'message_index'])->name('message.index');
-             Route::get('/message/destroy/{id}', [FormController::class, 'message_destroy'])->name('message.destroy');
-             Route::post('/message/export', [FormController::class, 'message_export'])->name('message.export');
+            // contact form
+            Route::get('/message', [FormController::class, 'message_index'])->name('message.index');
+            Route::get('/message/destroy/{id}', [FormController::class, 'message_destroy'])->name('message.destroy');
+            Route::post('/message/export', [FormController::class, 'message_export'])->name('message.export');
 
-             Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
-
+            Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
         });
     });
 
@@ -107,7 +102,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
 });
 require __DIR__ . '/auth.php';

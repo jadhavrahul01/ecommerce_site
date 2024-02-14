@@ -35,7 +35,8 @@ class HomeController extends Controller
     }
 
 
-    public function testimonial()
+
+    public function home()
     {
         $testimonials = Testimonial::all();
         return view('frontend.home', compact('testimonials'));
