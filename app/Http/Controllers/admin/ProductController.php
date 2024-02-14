@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.product.create',compact('categories'));
+        return view('admin.product.create', compact('categories'));
     }
     public function store(Request $request)
     {
@@ -47,15 +47,19 @@ class ProductController extends Controller
             $preview_img_image->save($destinationPath . $preview_img_name);
         }
 
+            // Fetch category ID
+    $categories = Category::where('stype_name', $request->categories)->first();
+    $category_id = $categories ? $categories->id : null;
+
         $product = new Product();
 
-       $product->name = $request->name;
-        $product->category = $request->category;
+        $product->name = $request->name;
+        $product->category_id = $category_id; // Assign category ID
         $product->price = $request->price;
         $product->preview_img = $preview_img_name;
 
         $product->custstar = $request->custstar;
-       // $product->rating = $request->rating;
+        // $product->rating = $request->rating;
         $product->save();
 
         return redirect()->route('admin.product.index')->with('success', 'Product created successfully.');
@@ -67,7 +71,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $categories = Category::all();
 
-        return view('admin.product.edit', compact('product','categories'));
+        return view('admin.product.edit', compact('product', 'categories'));
     }
     public function update(Request $request, $id)
     {
@@ -75,7 +79,6 @@ class ProductController extends Controller
 
             "name" => "required|string",
 
-        //    "rating" => "required|string",
         ]);
         $product = Product::findOrFail($id);
 
@@ -96,11 +99,10 @@ class ProductController extends Controller
         $product->price = $request->price;
         if ($request->hasFile("preview_img")) {
             $product->preview_img = $preview_img_name;
-
         }
-      //  $product->rating = $request->rating;
-      $product->custstar = $request->custstar;
-    $product->save();
+        //  $product->rating = $request->rating;
+        $product->custstar = $request->custstar;
+        $product->save();
 
         return redirect()->route('admin.product.index')->with('success', 'Product updated successfully.');
     }
@@ -114,7 +116,6 @@ class ProductController extends Controller
         }
         $product->delete();
         return redirect()->route('admin.product.index')->with('success', 'Product deleted successfully.');
-
     }
 
     public function create_image($product_id)

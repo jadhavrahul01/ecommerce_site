@@ -17,10 +17,25 @@ class Product extends Model
         'stype_name',
         'slug',
         'pservices_id',
+        'category_id',
 
     ];
+
+
+    protected $searchable = [
+        'joins' => [
+            'categories' => ['products.category', 'categories.id']
+        ],
+    ];
+
+
+
     public function images()
     {
         return $this->hasMany(ProductImage::class);
+    }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
